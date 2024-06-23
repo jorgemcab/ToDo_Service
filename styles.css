@@ -38,12 +38,20 @@ input, select{
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 .container-div{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 20%;
+    height: 250px;
+}
+.add-buttom{
+    height: 50px;
+}
+.card-ul{
+    height: 100px;
 }
 
 
