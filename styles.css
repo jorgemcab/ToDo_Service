@@ -1,0 +1,49 @@
+:root{
+    --font:blue
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+}
+select{
+    border-radius: 3px;
+}
+.empy{
+    color: rgb(158, 157, 157);
+}
+select:nth-child(0){
+    color: gray;
+}
+input, select{
+    height: 20%;
+}
+#input-dir{
+    border-radius: 3px;
+}
+
+.container{
+    width: 100%;
+    margin-top: 5vh;
+
+}
+.container-form{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.container-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 20%;
+}
+
+
