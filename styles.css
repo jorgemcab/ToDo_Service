@@ -16,19 +16,19 @@ header{
 select{
     border-radius: 3px;
 }
-.empy{
-    color: rgb(158, 157, 157);
-}
-select:nth-child(0){
-    color: gray;
-}
+
 input, select{
     height: 20%;
 }
 #input-dir{
     border-radius: 3px;
 }
-
+#input-dir::placeholder{
+    color:black
+}
+.empy{
+    color: gray;
+}
 .container{
     width: 100%;
     margin-top: 5vh;
