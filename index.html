@@ -21,32 +21,32 @@
         <form class="container-form">
             <div class="container-div">
                 <input type="text" placeholder="Direccion" id="input-dir">
-                <select name="" id="select-day">
+                <select name="" id="select-day" required>
                     <option value="vacio" class="empy" disabled selected hidden>Dia</option>
-                    <option value="lunes">Lunes</option>
-                    <option value="martes">Martes</option>
-                    <option value="miercoles">Miercoles</option>
-                    <option value="jueves">Jueves</option>
-                    <option value="viernes">Viernes</option>
-                    <option value="sabado">Sabado</option>
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miercoles">Miercoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Viernes">Viernes</option>
+                    <option value="Sabado">Sabado</option>
                 </select>
-                <select name="" id="select-time">
-                    <option value="vacio" class="empy" disabled selected hidden>Horario</option>
-                    <option value="08">08:00</option>
-                    <option value="09">09:00</option>
-                    <option value="10">10:00</option>
-                    <option value="11">11:00</option>
-                    <option value="12">12:00</option>
-                    <option value="13">13:00</option>
-                    <option value="14">14:00</option>
-                    <option value="15">15:00</option>
-                    <option value="16">16:00</option>
+                <select name="" id="select-time" >
+                    <option value="vacio"  disabled selected hidden>Horario</option>
+                    <option value="1">08 - 10 hs</option>
+                    <option value="09:00 hs">09 - 11 hs</option>
+                    <option value="10:00 hs">10 - 12 hs</option>
+                    <option value="11:00 hs">11 - 13 hs</option>
+                    <option value="12:00 hs">12 - 14 hs</option>
+                    <option value="13:00 hs">13 - 15hs</option>
+                    <option value="14:00 hs">14 - 16 hs</option>
+                    <option value="15:00 hs">15 - 17 hs</option>
+                    <option value="16:00 hs">16 - 18 hs</option>
                 </select>
-                <select name="" id="select-electro">
-                    <option value="vacio" class="empy" disabled selected hidden>Electrodomestico</option>
-                    <option value="lavarroopa">Lavarropas</option>
-                    <option value="heladera">Heladera</option>
-                    <option value="aire">Aire acondicionado</option>
+                <select name="" id="select-electro" >
+                    <option value="vacio" disabled selected hidden>Electrodomestico</option>
+                    <option value="Lavarroopa">Lavarropas</option>
+                    <option value="Heladera">Heladera</option>
+                    <option value="Aire acondicionado">Aire acondicionado</option>
                 </select>
             </div>
             <textarea placeholder="Obs:" cols="70" rows="15" id="observations"></textarea>

@@ -1,7 +1,12 @@
 :root{
-    --font:blue
+    --contornos: #B4E1FD;
+    --contorno-oscuro: #7FC0FC;
+    --contorno-azul: #22062f;
+    --paraprevia-font: #0E0A30
+
 }
 *{
+    background: var(--contorno-azul);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,21 +18,38 @@ header{
     justify-content: center;
     margin: 50px 0;
 }
-select{
-    border-radius: 3px;
+header h1{
+    color: var(--contornos);
+    letter-spacing: 25px;
 }
 
 input, select{
+    border-radius: 5px;
+    border: solid 1px var(--contorno-oscuro);
+    box-shadow: 1px 1px 3px var(--contornos);
     height: 20%;
+    color: var(--contorno-oscuro);
+
 }
 #input-dir{
     border-radius: 3px;
+    color: var(--contorno-oscuro);
+
 }
 #input-dir::placeholder{
-    color:black
+    color: var(--contorno-oscuro);
+    padding-left: 5px;
 }
-.empy{
-    color: gray;
+#input-dir:focus{
+    background: var(--contorno-azul);
+}
+#observations{
+    border-radius: 5px;
+    border: solid 1px var(--contorno-oscuro);
+    box-shadow: 1px 1px 3px var(--contornos);
+    height: 20%;
+    color: var(--contorno-oscuro);
+    padding: 5px;
 }
 .container{
     width: 100%;
@@ -49,9 +71,38 @@ input, select{
 }
 .add-buttom{
     height: 50px;
+    color: var(--contorno-oscuro);
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px var(--contornos);
+
+    padding: 15px;
 }
+/*
 .card-ul{
     height: 100px;
+}*/
+.card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 20%;
+    margin: 20px 100px;
+    padding: 30px;
+    border-radius: 3px;
+    border: solid 1px var(--contorno-oscuro);
+    box-shadow: 1px 1px 3px var(--contornos);
 }
-
+.clientDatos{
+    display: flex;
+    justify-content: space-around;
+    color:#7FC0FC;
+}
+.clientElectro{
+    display: flex;
+    justify-content: space-around;
+    color:#7FC0FC;
+}
+.delete-btn{
+    color: #7FC0FC;
+}
 

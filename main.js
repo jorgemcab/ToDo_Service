@@ -6,8 +6,14 @@ const day = document.querySelector("#select-day");
 const time = document.querySelector("#select-time");
 const electrodom = document.querySelector("#select-electro");
 const obs = document.querySelector("#observations");
+/* BUTTOM DELETE */
+const deleteBtn = document.querySelector(".delete-btn")
 
-let cardsContainer = [];
+let cardsContainer = JSON.parse(localStorage.getItem("agenda")) || [];
+
+const saveLocarStorage = () => {
+    localStorage.setItem("agenda", JSON.stringify(cardsContainer))
+};
 
 const render = () => {
     taskContainer.innerHTML = cardsContainer.map( (task) => {
@@ -20,39 +26,70 @@ const render = () => {
             </ul>
             <ul class= "clientElectro">
             <li>${task.Electrodomestico}</li>
+            <i class="fa-regular fa-trash-can delete-btn" data-id= ${task.id}></i>         
             </ul>
-            <div class= "obsContainer">
-            ${task.Observaciones}  
-            <i class="fa-regular fa-trash-can delete-btn" data-id= "${task.id}"></i>         
             </div>
-            `
-        }).join("")
-    };
 
-    const clickAddTask= (e) => {
-        e.preventDefault();
-        const dir_form = direction.value;
-        const day_form = day.value;
-        const time_form = time.value;
-        const electro_form = electrodom.value;
-        const obs_form = obs.value;
+            ${task.Observaciones}  
+            `
+        }).join(" ");
+    };
+    const upDateUi = () => {
+        saveLocarStorage();
+        render();
+        addBtn.reset();
+
+    }
+
+    function clickAddTask(e) {
+    e.preventDefault();
+
+    if( !direction.value.length){
+        alert("Ingresar la direccion");
+        return
+    } else if( day.value == 'vacio'){
+        alert("Ingresar el dia");
+        return
+    } else if( time.value == 'vacio'){
+        alert("Ingresar el horario");
+        return
+    } else if( electrodom.value == 'vacio'){
+        alert("Ingresar el electrodomestico");
+        return
+    } else {
+ 
         cardsContainer = [
-            ...cardsContainer,{
-                Direccion: dir_form,
-                Dia: day_form,
-                Horario: time_form,
-                Electrodomestico: electro_form,
-                Observaciones: obs_form,
-                id: "aca va un id"
+            ...cardsContainer, {
+                Direccion: direction.value,
+                Dia: day.value,
+                Horario: time.value,
+                Electrodomestico: electrodom.value,
+                Observaciones: obs.value,
+                id: Date.now()
             }
         ];
-        render();
-        console.dir(cardsContainer);
+    };
+
+    upDateUi();
+
+    console.dir(cardsContainer)
+}
+const deleteItem = (e) => {
+    if(!e.target.classList.contains("delete-btn")){
+        return
+    } else {
+        const filterId = Number(e.target.dataset.id);
+        cardsContainer = cardsContainer.filter((task) => {
+            return task.id !== filterId;
+        });
+        upDateUi();
     }
+}
     
     const init = () => {
         document.addEventListener("DOMContentLoaded", render);
-        addBtn.addEventListener( "submit", clickAddTask)
+        addBtn.addEventListener( "submit", clickAddTask);
+        taskContainer.addEventListener("click", deleteItem)
     };
     
     init()
