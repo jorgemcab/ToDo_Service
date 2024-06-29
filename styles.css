@@ -91,7 +91,7 @@ input, select{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    
+    margin-bottom: 3%;
 }
 .card-container{
     display: flex;
@@ -111,6 +111,9 @@ input, select{
     justify-content: space-around;
     flex-wrap: wrap;
     color:#7FC0FC;
+}
+.clientDatos li{
+    margin: 5px 15px;
 }
 .clientElectro{
     display: flex;
