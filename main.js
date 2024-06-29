@@ -28,9 +28,9 @@ const render = () => {
             <li>${task.Electrodomestico}</li>
             <i class="fa-regular fa-trash-can delete-btn" data-id= ${task.id}></i>         
             </ul>
+            <span class= "card-observation">${task.Observaciones}</span>  
             </div>
 
-            ${task.Observaciones}  
             `
         }).join(" ");
     };
