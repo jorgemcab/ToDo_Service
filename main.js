@@ -6,8 +6,7 @@ const day = document.querySelector("#select-day");
 const time = document.querySelector("#select-time");
 const electrodom = document.querySelector("#select-electro");
 const obs = document.querySelector("#observations");
-/* BUTTOM DELETE */
-const deleteBtn = document.querySelector(".delete-btn")
+
 
 let cardsContainer = JSON.parse(localStorage.getItem("agenda")) || [];
 
@@ -30,7 +29,6 @@ const render = () => {
             </ul>
             <span class= "card-observation">${task.Observaciones}</span>  
             </div>
-
             `
         }).join(" ");
     };
@@ -75,12 +73,14 @@ const render = () => {
     console.dir(cardsContainer)
 }
 const deleteItem = (e) => {
-    if(!e.target.classList.contains("delete-btn")){
+    if(!e.target.classList.contains("delete-btn")){ /* si el evento (click) no se dispara en el elemento html de la clase (delete-btn) hace el return */
+        /* el metodo classList.contains es para preguntar al elemento (en este caso el que dispare el evento) si dentro dontiene una clase de nombre especificado en los parentesis */
         return
     } else {
-        const filterId = Number(e.target.dataset.id);
-        cardsContainer = cardsContainer.filter((task) => {
-            return task.id !== filterId;
+        const filterId = Number(e.target.dataset.id); /* crear variable con el dataset (id) del evento que genero el click y que SI es el elemento html de la clase (delete-btn) 
+                                                         y lo combertimos en nuero con el metodo .Number()*/
+        cardsContainer = cardsContainer.filter((task) => { 
+            return task.id !== filterId; /* modificar el cardContainer con todos los valores menos el que se guardo en la variable (que es el elemento que disparo el evento)*/
         });
         upDateUi();
     }
